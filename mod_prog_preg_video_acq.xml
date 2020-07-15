@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension
+
+type="module"
+
+version="4.0"
+
+method="upgrade"
+
+client="site">
+
+<name>Alege Programul Video pentru achizitie sau vizionare</name>
+
+<creationDate>September 2019</creationDate>
+
+<author>Eduard Stancu</author>
+
+<authorEmail>eduard.stancu@matematicon.ro</authorEmail>
+
+<authorUrl>http://matematicon.ro</authorUrl>
+
+<copyright>Copyright (C) 2019 Packt Publishing. All rights
+
+reserved.</copyright>
+
+<license>GNU GPL</license>
+
+<version>2.0.0</version>
+
+<description>Show the video programmes for BAC exam and give you the possibility to buy or to see if the program was already paid</description>
+
+<files>
+
+<filename module="mod_prog_preg_video_acq">mod_prog_preg_video_acq.php</filename>
+
+<filename>helper.php</filename>
+
+<filename>index.html</filename>
+
+<folder>tmpl</folder>
+
+</files>
+
+
+
+<config> <!-- aici se baga parametri din administrare la noi este vorba despre clasa-->
+
+<fields name="params">
+
+
+
+<fieldset name="basic">
+
+
+
+</fieldset>
+
+
+
+<fieldset name="advanced">
+
+<field
+
+name="moduleclass_sfx"
+
+type="text"
+
+label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+
+description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+
+/>
+
+</fieldset>
+
+</fields>
+
+</config>
+
+</extension>
