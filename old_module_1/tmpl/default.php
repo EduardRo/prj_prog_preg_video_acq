@@ -92,7 +92,6 @@
 	<?
 	$dataCapitole = '';
 	$dataCategorii = $ObjPPVSB->incarcaDateCategorie($codSubiect);
-	
 	echo "<p>Durata de utilizare a unui program este de 1 an de zile de la achizitie</p>";
 	echo "<div class='tbl'>";
 	foreach ($dataCategorii as $key => $value) {
@@ -110,8 +109,7 @@
 			} else {
 				$buttonLink = "<div class='g-block size-20'><a href='/achz-ppvb?tp=PPVB&prod=" . $codProdus . "' class='buton rosu'>Cumpara</a></div>";
 			}
-			$linkExemplu=$ObjPPVSB->incarcaLinkExemplu($value->cod_capitol);
-			//print_r($linkExemplu);
+
 
 			echo "<div class='" . (($c++ % 2 == 1) ? 'g-grid size-100 capitol odd' : 'g-grid size-100 capitol even') . "'>";
 
@@ -119,24 +117,8 @@
 			<div class='g-block size-20'>" . $value->cod_capitol . "</div>
 			<div class='g-block size-15'>" . $noOfVideos . " video-uri</div>
 			<div class='g-block size-15'>" . $credite . " credite</div>
-			" . $buttonLink . "<button id='myBtn'>Exemplu</button>" ;
+			" . $buttonLink;
 			echo "</div>";
-
-			echo '<div id="myModal" class="modal">
-
-			<!-- Modal content -->
-			<div class="modal-content">
-			  <span class="close">&times;</span>
-			  <div class="g-grid size-100 cadru">
-			  <div class="g-block size-100 titleofprogram">Monotonia unei functii derivabile - Exercitii - #2 - Exercitii 01</div>
-			  <div class="g-grid size-100 iframediv hidden-phone hidden-tablet visible-desktop visible-large"><iframe src="'.$linkExemplu.'" width="1280" height="720" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="">
-				</iframe></div><div class="g-grid size-100 iframediv visible-phone visible-tablet hidden-desktop hidden-large"><iframe src="'.$linkExemplu.'" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen=""></iframe>
-				</div>
-				</div>
-			</div>
-		  
-		  </div>
-		  ';
 		}
 		echo "</div>";
 		echo "</div>";
@@ -149,31 +131,3 @@
 	}
 	?>
 </div>
-
-<script>
-	// Get the modal
-	var modal = document.getElementById("myModal");
-
-	// Get the button that opens the modal
-	var btn = document.getElementById("myBtn");
-
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
-
-	// When the user clicks the button, open the modal 
-	btn.onclick = function() {
-		modal.style.display = "block";
-	}
-
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-		modal.style.display = "none";
-	}
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-		if (event.target == modal) {
-			modal.style.display = "none";
-		}
-	}
-</script>
