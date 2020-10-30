@@ -70,4 +70,16 @@ class clsAqc
 		$res = ($result) ? 1 : 0;
 		return $res;
 	}
+
+	public function incarcaLinkExemplu($codSubiect)
+	{
+		/*preia categoriile pentru vanzare 
+		*/
+		$myDB = JFactory::getDbo();
+		$table = 'w2020_programe_video_bac_exemple';
+		$myDB->setQuery("SELECT link_vimeo FROM $table WHERE cod_subiect='$codSubiect'");
+		$result = $myDB->loadObjectList();
+		//print_r($result);
+		return $result;
+	}
 }
